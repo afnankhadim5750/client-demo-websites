@@ -17,7 +17,8 @@
 <header class="site">
   <div class="wrap topbar">
     <a class="brand" href="index.html">Wendell's <em>Roofing</em></a>
-    <nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav"><i class="bi bi-list"></i></button>
+    <nav id="siteNav">
       <a class="page active" href="index.html">Home</a>
       <a class="page" href="services.html">Services</a>
       <a class="page" href="gallery.html">Gallery</a>
@@ -139,5 +140,15 @@
     <span>Concept website design</span>
   </div>
 </footer>
+<script>
+(function(){
+  var btn=document.getElementById('navToggle'),nav=document.getElementById('siteNav');
+  if(btn&&nav){btn.addEventListener('click',function(){
+    var open=nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open?'true':'false');
+    btn.setAttribute('aria-label',open?'Close menu':'Open menu');
+  });}
+})();
+</script>
 </body>
 </html>

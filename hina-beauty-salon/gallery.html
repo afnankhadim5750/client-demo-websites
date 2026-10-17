@@ -25,6 +25,7 @@
       <a href="contact.html">Contact</a>
       <a class="nav-phone" href="tel:+15149716786"><i class="bi bi-telephone"></i><span>(514) 971-6786</span></a>
     </nav>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><i class="bi bi-list"></i></button>
   </div>
 </header>
 
@@ -61,6 +62,19 @@
 <script>
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+<script>
+var _nt=document.querySelector('.nav-toggle'),_nn=document.querySelector('.nav-links');
+_nt.addEventListener('click',function(){
+  var open=_nn.classList.toggle('open');
+  _nt.setAttribute('aria-expanded',open?'true':'false');
+  _nt.setAttribute('aria-label',open?'Close menu':'Open menu');
+  _nt.querySelector('i').className='bi '+(open?'bi-x':'bi-list');
+});
+_nn.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){
+  _nn.classList.remove('open');_nt.setAttribute('aria-expanded','false');
+  _nt.setAttribute('aria-label','Open menu');_nt.querySelector('i').className='bi bi-list';
+});});
 </script>
 </body>
 </html>

@@ -18,7 +18,7 @@
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:var(--font-body);background:var(--white);color:var(--navy);
-  font-size:16.5px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  font-size:16.5px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 h1,h2,h3{font-family:var(--font-display);font-weight:600;line-height:1.2;letter-spacing:.002em}
 a{color:inherit}
 img{display:block;max-width:100%}
@@ -207,3 +207,53 @@ footer.calm{background:#F1F4F7;color:var(--slate);padding:70px 0 0;font-size:15p
   border-bottom:1px solid rgba(255,255,255,.14);font-size:15.5px}
 .side-card .hours div:last-child{border:none}
 .side-card .btn.gold{width:100%;text-align:center;margin-top:28px}
+
+/* ---------- mobile hamburger nav (clean corporate panel) ---------- */
+/* Hidden on desktop — only appears at or below 768px. Tapping toggles
+   .open on the .wrap.nav container (see inline script before </body>). */
+.nav-toggle{display:none;border:1px solid var(--line);background:var(--white);color:var(--navy);
+  width:44px;height:44px;border-radius:10px;cursor:pointer;flex:none;
+  align-items:center;justify-content:center;font-size:26px;line-height:1;padding:0}
+.nav-toggle:hover{border-color:var(--navy)}
+.nav-toggle:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+@media(max-width:768px){
+  /* hide the horizontal link row, show the hamburger */
+  .nav-toggle{display:inline-flex}
+  .nav-links{display:none}
+  /* dropdown panel when .open is toggled */
+  .nav.open{position:relative}
+  .nav.open .nav-links{display:flex;flex-direction:column;align-items:stretch;gap:0;
+    position:absolute;top:calc(100% + 1px);left:0;right:0;background:var(--white);
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    box-shadow:0 34px 54px rgba(16,36,62,.18);padding:8px 24px 20px;z-index:150}
+  .nav.open .nav-links a.page{display:block;padding:14px 4px;min-height:48px;font-size:16px;
+    color:var(--navy);border-bottom:1px solid var(--line)}
+  .nav.open .nav-links a.page:hover{color:var(--gold-deep)}
+  .nav.open .nav-links a.page.active{box-shadow:inset 3px 0 0 var(--gold);font-weight:700}
+  .nav.open .nav-links .btn.small{margin-top:16px;min-height:48px;width:100%;
+    display:inline-flex;align-items:center;justify-content:center;font-size:15.5px}
+}
+
+/* ---------- small-screen hardening (<=768px only) ---------- */
+@media(max-width:768px){
+  .hero-grid h1{font-size:clamp(34px,9vw,44px)}
+  .kicker{letter-spacing:.18em;font-size:11px}
+  .page-intro h1{font-size:clamp(32px,8.5vw,44px)}
+  .page-intro{padding:60px 0 54px}
+  .features{padding:70px 0 56px}
+  .features-head{margin-bottom:44px}
+  .bands{padding:20px 0 70px}
+  .faq{padding:70px 0}
+  .values{padding:64px 0}
+  .strip{padding:10px 0 60px}
+  .strip img{height:260px}
+  .contact-grid{padding:60px 0}
+  /* keep the fixed concept badge off the hamburger */
+  .concept{top:auto;bottom:14px;right:14px}
+  /* full-width stacked hero CTAs = generous tap targets, no squeeze */
+  .hero-cta .btn{flex:1 1 100%;text-align:center;min-height:52px;
+    display:inline-flex;align-items:center;justify-content:center}
+  .side-card{padding:36px 28px}
+  .quote-band{padding:72px 22px}
+}

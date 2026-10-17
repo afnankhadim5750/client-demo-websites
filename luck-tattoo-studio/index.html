@@ -17,13 +17,14 @@
 <header class="topbar">
   <div class="wrap">
     <a class="wordmark" href="index.html">Luck<b>★</b>Tattoo</a>
-    <nav class="topnav">
+    <nav class="topnav" id="topnav">
       <a class="link active" href="index.html">Home</a>
       <a class="link" href="services.html">Services</a>
       <a class="link" href="gallery.html">Gallery</a>
       <a class="link" href="contact.html">Contact</a>
       <a class="btn small red" href="tel:+18137986271">Book Now</a>
     </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="topnav"><i class="bi bi-list"></i></button>
   </div>
 </header>
 
@@ -148,5 +149,20 @@
     </div>
   </div>
 </footer>
+<script>
+(function(){
+  var btn=document.getElementById('navToggle'),nav=document.getElementById('topnav');
+  if(!btn||!nav)return;
+  function set(open){
+    nav.classList.toggle('open',open);
+    btn.setAttribute('aria-expanded',open?'true':'false');
+    btn.setAttribute('aria-label',open?'Close menu':'Open menu');
+    var ic=btn.querySelector('i');
+    if(ic){ic.classList.toggle('bi-list',!open);ic.classList.toggle('bi-x',open);}
+  }
+  btn.addEventListener('click',function(){set(!nav.classList.contains('open'));});
+  nav.addEventListener('click',function(e){if(e.target.closest('a'))set(false);});
+})();
+</script>
 </body>
 </html>

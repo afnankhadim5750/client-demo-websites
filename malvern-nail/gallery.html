@@ -22,6 +22,7 @@
     <a class="active" href="gallery.html">Gallery</a>
     <a href="contact.html">Contact</a>
   </nav>
+  <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false"><i class="bi bi-list"></i></button>
   <a class="btn small" href="tel:+61423654399">Call to Book</a>
 </div>
 
@@ -68,5 +69,19 @@
   <a class="fphone" href="tel:+61423654399">0423 654 399</a>
   <p class="copy">© 2026 Malvern Nail · Concept website design · <a href="https://m.facebook.com/Angela.de.nails" target="_blank" rel="noopener">Facebook</a></p>
 </footer>
+<script>
+(function(){
+  var btn=document.querySelector('.nav-toggle');
+  var bar=document.querySelector('.pillnav');
+  if(!btn||!bar)return;
+  var icon=btn.querySelector('i');
+  btn.addEventListener('click',function(){
+    var open=bar.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open?'true':'false');
+    btn.setAttribute('aria-label',open?'Close menu':'Open menu');
+    if(icon)icon.className=open?'bi bi-x':'bi bi-list';
+  });
+})();
+</script>
 </body>
 </html>

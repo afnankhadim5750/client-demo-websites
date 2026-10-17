@@ -31,6 +31,7 @@
       <a class="page active" href="contact.html">Contact</a>
       <a class="btn small" href="tel:+12563531460">Get a Quote</a>
     </nav>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false"><i class="bi bi-list"></i></button>
   </div>
 </header>
 
@@ -127,5 +128,8 @@
     <span>Concept website design</span>
   </div>
 </footer>
+<script>
+(function(){var b=document.querySelector('.nav-toggle'),n=document.querySelector('header.site .nav');if(!b||!n)return;b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');});})();
+</script>
 </body>
 </html>

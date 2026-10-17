@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery | Apple Sweet Cleaning Services, Largo FL</title>
+<meta name="description" content="See the Apple Sweet Cleaning standard — bright, tidy living rooms, gleaming kitchens and pristine bathrooms across Largo, FL.">
+<meta property="og:title" content="Gallery | Apple Sweet Cleaning Services">
+<meta property="og:description" content="Bright, tidy, spotless — a look at the clean Apple Sweet Cleaning Services delivers in Largo, FL.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="images/living-room.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="Apple Sweet Cleaning Services — home">
+      <span class="brand-mark"><i class="bi bi-stars"></i></span>
+      <span>
+        <span class="brand-name">Apple Sweet<br>Cleaning Services</span><br>
+        <span class="brand-sub">Largo, FL</span>
+      </span>
+    </a>
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html" class="active">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a class="header-cta" href="tel:+17276128739"><i class="bi bi-telephone-fill"></i> (727) 612-8739</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><i class="bi bi-list"></i></button>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <p class="kicker">Gallery</p>
+      <h1>Bright. Tidy. <span class="accent">Spotless.</span></h1>
+      <p>A glimpse of the finish we bring to every home in Largo — fresh, airy spaces you can feel the moment you walk in.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:70px">
+    <div class="container">
+      <div class="gallery-grid">
+        <figure>
+          <img src="images/living-room.webp" alt="Sunlit, sparkling-clean living room" loading="lazy">
+          <figcaption><i class="bi bi-house-heart"></i> Living rooms, reset to calm</figcaption>
+        </figure>
+        <figure>
+          <img src="images/kitchen.webp" alt="Gleaming kitchen countertop with fresh detail" loading="lazy">
+          <figcaption><i class="bi bi-egg-fried"></i> Kitchens that gleam</figcaption>
+        </figure>
+        <figure>
+          <img src="images/bathroom.webp" alt="Pristine white bathroom with sparkling fixtures" loading="lazy">
+          <figcaption><i class="bi bi-droplet"></i> Bathrooms, spa-fresh</figcaption>
+        </figure>
+        <figure>
+          <img src="images/cleaner.webp" alt="Professional cleaner arriving with supplies" loading="lazy">
+          <figcaption><i class="bi bi-basket"></i> We bring everything we need</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="padding-top:0">
+    <div class="container">
+      <div class="cta-band">
+        <h2>Want your home looking like this?</h2>
+        <p>Call for a free quote — we&rsquo;ll handle the rest.</p>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="contact.html"><i class="bi bi-chat-quote"></i> Get a free quote</a>
+          <a class="btn btn-outline" href="tel:+17276128739"><i class="bi bi-telephone"></i> (727) 612-8739</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="brand-mark"><i class="bi bi-stars"></i></span>
+        <h3 style="margin-top:14px">Apple Sweet Cleaning Services</h3>
+        <p>A local Largo, FL cleaning company. Individual services and package deals — we bring our own supplies and transport.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h3>Get in touch</h3>
+        <p><i class="bi bi-telephone"></i> <a href="tel:+17276128739" style="color:inherit">(727) 612-8739</a></p>
+        <p><i class="bi bi-envelope"></i> <a href="mailto:applesweetcleaningservices@gmail.com" style="color:inherit">applesweetcleaningservices@gmail.com</a></p>
+        <p><i class="bi bi-geo-alt"></i> 11801 104th Ln, Largo, FL 33773</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Apple Sweet Cleaning Services. All rights reserved.</span>
+      <span class="concept-badge"><i class="bi bi-brush"></i> Website concept — design preview</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('navToggle').addEventListener('click',function(){
+  var nav=document.getElementById('mainNav');
+  var open=nav.classList.toggle('open');
+  this.setAttribute('aria-expanded',open);
+});
+</script>
+</body>
+</html>

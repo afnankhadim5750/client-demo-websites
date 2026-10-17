@@ -34,6 +34,7 @@
       <a class="page" href="contact.html">Contact</a>
       <a class="btn small" href="tel:+12567391805">Free Estimate</a>
     </nav>
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false"><i class="bi bi-list"></i></button>
   </div>
 </header>
 
@@ -98,5 +99,19 @@
     <span>Concept website design</span>
   </div>
 </footer>
+<script>
+(function(){
+  var header = document.querySelector('header.site');
+  var btn = document.querySelector('.nav-toggle');
+  if(!header || !btn){return;}
+  var icon = btn.querySelector('i');
+  btn.addEventListener('click', function(){
+    var open = header.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    if(icon){ icon.className = open ? 'bi bi-x' : 'bi bi-list'; }
+  });
+})();
+</script>
 </body>
 </html>

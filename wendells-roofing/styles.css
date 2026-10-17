@@ -19,7 +19,8 @@
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:var(--font-body);background:var(--white);color:var(--ink);
-  font-size:16.5px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  font-size:16.5px;line-height:1.65;-webkit-font-smoothing:antialiased;
+  overflow-x:hidden;overflow-x:clip}
 h1,h2,h3{font-family:var(--font-display);font-weight:900;letter-spacing:-.02em;line-height:1.05;text-transform:uppercase}
 a{color:inherit}
 img{display:block;max-width:100%}
@@ -40,6 +41,8 @@ header.site{position:sticky;top:0;z-index:100;background:var(--navy-deep);border
   color:#B9C6D3;text-transform:uppercase}
 .topbar nav a.page:hover{color:#fff}
 .topbar nav a.page.active{color:var(--amber)}
+/* hamburger: desktop-hidden, mobile-only */
+.nav-toggle{display:none}
 .btn{display:inline-block;background:var(--amber);color:#1A1206;text-decoration:none;font-weight:800;
   font-family:var(--font-display);font-size:15px;padding:15px 32px;border-radius:8px;letter-spacing:.04em;
   text-transform:uppercase;border:none;cursor:pointer;
@@ -144,8 +147,9 @@ header.site{position:sticky;top:0;z-index:100;background:var(--navy-deep);border
 .step p{font-size:14.5px;color:#9FB0C1}
 .svc-row{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:44px;border-radius:var(--radius);
   overflow:hidden;box-shadow:0 18px 44px rgba(15,42,67,.12)}
-@media(max-width:860px){.svc-row{grid-template-columns:1fr}}
 .svc-row .pic{min-height:340px}
+@media(max-width:860px){.svc-row{grid-template-columns:1fr}
+.svc-row .pic{min-height:0;height:280px}}
 .svc-row .pic img{width:100%;height:100%;object-fit:cover}
 .svc-row .txt{padding:52px 48px;background:#fff}
 .svc-row:nth-child(even) .txt{background:var(--navy);color:#DCE4EB}
@@ -234,8 +238,36 @@ footer.site a:hover{color:var(--amber)}
   justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:13px}
 
 .center{text-align:center;margin-top:52px}
-@media(max-width:760px){
-  .topbar nav a.page{display:none}
+/* ---------- mobile (<=768px) : hamburger nav + small fixes ---------- */
+@media(max-width:768px){
   .sec{padding:72px 0}
   .est-panel{padding:32px 26px}
+  .lead-hero{padding:56px 0 64px}
+  .page-hero{padding:54px 0}
+  .guarantee{padding:60px 0}
+  .kicker{letter-spacing:.18em;font-size:11.5px}
+  .lead-hero h1{font-size:clamp(32px,9.5vw,68px)}
+  .hero-phone{flex-wrap:wrap;gap:12px}
+  /* keep the fixed "Design concept" badge off the hamburger */
+  .concept{top:auto;bottom:14px}
+  /* show the hamburger, hide the horizontal link row */
+  .nav-toggle{display:inline-flex;align-items:center;justify-content:center;
+    width:46px;height:46px;flex:none;background:var(--amber);color:#1A1206;border:none;
+    border-radius:10px;font-size:26px;cursor:pointer;transition:background .2s,color .2s}
+  .nav-toggle:hover{background:var(--amber-deep);color:#fff}
+  .topbar nav{display:none}
+  /* open state: stacked dropdown panel in navy/amber/white */
+  .topbar nav.open{display:flex;position:absolute;top:100%;left:0;right:0;z-index:101;
+    flex-direction:column;align-items:stretch;gap:0;background:var(--navy-deep);
+    border-bottom:4px solid var(--amber);padding:10px 26px 22px;
+    box-shadow:0 30px 50px rgba(7,22,39,.45)}
+  .topbar nav.open a.page{display:block;width:100%;min-height:48px;line-height:48px;
+    border-bottom:1px solid rgba(255,255,255,.1);font-size:15px;letter-spacing:.12em;color:#DCE4EB}
+  .topbar nav.open a.page.active{color:var(--amber)}
+  .topbar nav.open a.page:hover{color:#fff}
+  .topbar nav.open .btn.small{margin-top:18px;width:100%;text-align:center;
+    padding:16px;font-size:15px}
+  /* cap gallery image heights so no photo dominates a phone screen */
+  .egal figure{height:280px}
+  .egal figure.wide{height:300px}
 }
